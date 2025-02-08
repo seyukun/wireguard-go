@@ -62,6 +62,10 @@ func warning() {
 }
 
 func main() {
+	var foreground bool
+	var interfaceName string
+
+
 	/**
 	 * # 引数と環境のチェック
 	 */
@@ -77,9 +81,6 @@ func main() {
 		return
 	}
 
-
-	var foreground bool
-	var interfaceName string
 
 	switch os.Args[1] {
 
