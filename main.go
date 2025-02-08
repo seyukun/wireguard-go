@@ -36,6 +36,10 @@ func printUsage() {
 	fmt.Printf("Usage: %s [-f/--foreground] INTERFACE-NAME\n", os.Args[0])
 }
 
+
+/**
+ * # カーネル互換がある場合の注意文
+ */
 func warning() {
 	switch runtime.GOOS {
 	case "linux", "freebsd", "openbsd":
