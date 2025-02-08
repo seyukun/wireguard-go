@@ -62,6 +62,10 @@ func warning() {
 }
 
 func main() {
+	if len(os.Args) < 2 || len(os.Args) > 3 {
+		printUsage()
+		return
+	}
 	if len(os.Args) == 2 && os.Args[1] == "--version" {
 		fmt.Printf("wireguard-go v%s\n\nUserspace WireGuard daemon for %s-%s.\nInformation available at https://www.wireguard.com.\nCopyright (C) Jason A. Donenfeld <Jason@zx2c4.com>.\n", Version, runtime.GOOS, runtime.GOARCH)
 		return
@@ -71,10 +75,6 @@ func main() {
 
 	var foreground bool
 	var interfaceName string
-	if len(os.Args) < 2 || len(os.Args) > 3 {
-		printUsage()
-		return
-	}
 
 	switch os.Args[1] {
 
